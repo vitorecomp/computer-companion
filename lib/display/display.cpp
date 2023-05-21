@@ -1,11 +1,6 @@
 #include <display.hpp>
 
 
-Adafruit_PCD8544 NokiaDisplay::display = Adafruit_PCD8544(NOKIA_DISPLAY_CLK, 
-                                            NOKIA_DISPLAY_DIN, 
-                                            NOKIA_DISPLAY_DC, 
-                                            NOKIA_DISPLAY_CE, 
-                                            NOKIA_DISPLAY_RST);
 
 void NokiaDisplay::drawBitmap(const byte bitmap[]) {
   display.clearDisplay();
@@ -39,7 +34,11 @@ void NokiaDisplay::init()
   delay(2000);
 }
 
-NokiaDisplay::NokiaDisplay()
+NokiaDisplay::NokiaDisplay() : display(NOKIA_DISPLAY_CLK, 
+                                            NOKIA_DISPLAY_DIN, 
+                                            NOKIA_DISPLAY_DC, 
+                                            NOKIA_DISPLAY_CE, 
+                                            NOKIA_DISPLAY_RST)
 {
 }
 

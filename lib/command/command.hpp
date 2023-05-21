@@ -3,7 +3,11 @@
 
 enum command_output
 {
-    display_output
+    display_output,
+    audio_output,
+    sensor_output,
+    keyboard_output,
+    ledstrip_output,
 };
 
 enum command_type

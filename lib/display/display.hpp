@@ -15,7 +15,7 @@
 class NokiaDisplay
 {
 private:
-    static Adafruit_PCD8544 display;
+    Adafruit_PCD8544 display;
     void drawBitmap(const byte bitmap[]);
 public:
     void init();
