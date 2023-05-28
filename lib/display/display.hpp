@@ -7,7 +7,7 @@
 #include <Arduino.h>
 #include <avr/pgmspace.h> 
 
-#include "../../include/display_ports.hpp"
+#include "../../include/board_pinout.hpp"
 #include "../../include/display_images.hpp"
 
 

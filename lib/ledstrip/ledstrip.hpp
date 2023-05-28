@@ -2,11 +2,11 @@
 #define LEDSTRIP_H
 
 #include <Adafruit_NeoPixel.h>
-#include "../../include/neo_strip_ports.hpp"
+#include "../../include/board_pinout.hpp"
 
 class NeoStrip{
-    Adafruit_NeoPixel strip;
 public:
+    Adafruit_NeoPixel strip;
     NeoStrip();
     void init();
 };

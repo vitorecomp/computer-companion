@@ -6,7 +6,7 @@ void NokiaDisplay::drawBitmap(const byte bitmap[]) {
   display.clearDisplay();
   for(int i = 0; i < display.width() * display.height() /8 ; i++){
     for(int bit  = 0; bit < 8; bit++){
-      if((pgm_read_byte(&(bitmap[i])) & ( 1 << bit )) >> bit){
+      if(!((pgm_read_byte(&(bitmap[i])) & ( 1 << bit )) >> bit)){
         display.drawPixel((i*8+(7-bit)) % display.width(), (i*8+(7-bit)) / display.width(), BLACK);
       }
     }
@@ -29,7 +29,7 @@ void NokiaDisplay::init()
   display.clearDisplay();   // clears the screen and buffer
 
   // draw a single pixel
-  this->drawBitmap(pixil_frame_0);
+  this->drawBitmap(main_screen);
   display.display();
   delay(2000);
 }

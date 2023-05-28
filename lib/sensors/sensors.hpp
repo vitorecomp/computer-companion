@@ -2,17 +2,20 @@
 #define SESORS_H
 
 #include <Arduino.h>
-#include "../../include/connected_sensors.hpp"
+
+#include <system.hpp>
+#include <command.hpp>
+
+#include "../../include/board_pinout.hpp"
+#include "../../include/constants_values.hpp"
 
 // https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-pir-detector-de-movimento
 
-struct system_state
-{
-    uint16_t sleep_time;
-};
+void init_sensors(system_state *);
+uint8_t sensors_get_commands(command *, uint8_t, system_state *);
+void sensors_execute_command(command *, system_state *);
 
-void init_sensors(struct system_state *);
-int sensors_get_commands(struct command *, struct system_state *);
-void sensors_execute_command(struct command *, struct system_state *);
+void read_sensors(system_state *);
+void run_sensors_average(system_state *);
 
 #endif // SESORS_H
